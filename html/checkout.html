@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Checkout_FoodPlan47</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+    <!-- imported style sheet -->
+    <link rel = "stylesheet" href = "../css/reset.css" type = "text/css">
+    <link rel = "stylesheet" href = "../css/main.css" type = "text/css">
+    <link rel = "stylesheet" href = "../css/Header.css" type = "text/css">
+    <link rel = "stylesheet" href = "../css/Suggest.css" type = "text/css">
+    <link rel = "stylesheet" href = "../css/Restaurants.css" type = "text/css">
+    <link rel = "stylesheet" href = "../css/Footer.css" type= "text/css">
+    <link rel = "stylesheet" href = "../css/SideGutter.css" type = "text/css">
+    <link rel = "stylesheet" href = "../css/FoodContainer.css" type="text/css">
+    <link rel = "stylesheet" href = "../css/Food.css" type = "text/css">
+    <link rel = "icon" href = "../images/Plate%20Logo%20Concept.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="   crossorigin="anonymous"></script>
+    <script src="../js/addAddress.js" defer></script>
+</head>
+
+<body>
+<div class="body__container">
+
+    <!--Header-->
+    <header class="header fixed">
+        <div class="upper__header">
+            <div class="inner">
+                <ul class="logo_wrapper">
+                    <li id="click-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="logo">
+                        <a href="restaurant.html"><img src="../images/Plate%20Logo%20Separated.png" alt="logo"></a>
+                    </li>
+                </ul>
+                <!--End of logo_wrapper-->
+
+                <ul class="time_addresses_wrap_box address_btn">
+                    <li class="cursor_pointer">
+                        <ul class="addresses_wrap_box">
+                            <li class="imgCon_1">
+                                <img src="../images/time%20icon%201.png" alt="time">
+                            </li>
+                            <li class="TIME"> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                            <li class="radio"></li>
+                        </ul>
+                    </li>
+                    <li class="cursor_pointer">
+                        <ul class="addresses_wrap_box">
+                            <li class="imgCon_1">
+                                <img src="../images/Address%20Icon%202.png" alt="addresses">
+                            </li>
+                            <li class="addresses"> 220 Dysart Road Winnipeg, MB</li>
+                            <li class="address_controller cursor_pointer">
+                                <img src="../images/Down%20Icon%202.png" alt="Down" />
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div>
+                    <ul class="addresses_timeSelection">
+                        <li class="addresses_big_wrapper">
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                <li class="radio">
+                                </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME">OCT 15TH 8:30 PM ~ 9:00 PM</li>
+                                <li class="radio">
+                                </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1"></li>
+                                <li class="TIME"> OCT 15TH 9:00 PM ~ 9:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME "> OCT 15TH 9:30 PM ~ 10:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME "> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 10:30 PM ~ 11:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 11:30 PM ~ 12:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 12:30 PM ~ 13:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                        </li>
+                        <li class = "addressListContainer" id ="addresses">
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="addresses"> 220 Dysart Road Winnipeg, MB</li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <form id="addressForm" name="creditCardForm" onsubmit="addAddress(this.addressNumber.value, this.addressName.value)">
+                                <label for="addressNumber">Address Number</label>
+                                <br>
+                                <input type="text" name="cardName" id="addressNumber" maxlength="10" title="Digits 0-9 only, max length 10." required>
+                                <br>
+                                <label for="addressName">Street Name</label>
+                                <br>
+                                <input type="text" name="cardCode" id="addressName" minlength="3" maxlength="20" title="Letters a-z, capitals allowed, max length 20." required>
+                                <br>
+                                <button type="submit" id="submitAddress">Add New Address</button>
+                            </form>
+
+                            <ul class = "addresses_wrap_box" onclick="toggleAddressForm()">
+                                <li class = "imgCon_1">
+                                </li>
+                                <li class = "addresses" id="enterAddress"> Enter Your Addresses </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="stop"></div>
+                </div>
+
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">
+                            <img src="../images/ICON/Globe%20Icon.png" alt="lang">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/ICON/User%20Icon%202.png" alt="User">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html">
+                            <div class="header_img">
+                                <img src="../images/ICON/Sign%20Out%20Icon.png" alt="singOut">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <!--End of inner-->
+
+            <div class="ham-Menu">
+                <div class="inner">
+                    <ul class="hamWrapper">
+                        <li>
+                            <ul class="ham_menu_wrapper">
+                                <li class="ham_title_menu" id = "ham_title">SUGGESTION & RESTAURANT</li>
+                                <li class="ham_sub_menu" id = "ham_sub">Suggestion</li>
+                                <li class="ham_sub_menu" id = "ham_all">All Restaurant</li>
+                                <li class="ham_sub_menu" id = "ham_food"> Food Type </li>
+                                <li class="ham_sub_menu" id = "ham_price"> Price </li>
+                                <li class="ham_sub_menu" id = "ham_continent"> Continent </li>
+                                <li class="ham_sub_menu" id = "ham_rating"> Rating </li>
+                                <li class="ham_sub_menu" id = "ham_del"> Delivery Time </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="ham_menu_wrapper">
+                                <li class="ham_title_menu" style="text-indent: 100px">EVENT</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Upcoming Event</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Event Calendar</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Event List </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="ham_menu_wrapper" style="text-indent: 150px">
+                                <li class="ham_title_menu">MY ACCOUNT</li>
+                                <li class="ham_title_menu">ABOUT US</li>
+                                <li class="ham_title_menu">CUSTOMER SERVICE</li>
+                                <li class="ham_title_menu">DELIVERY POLICY</li>
+                                <li class="ham_title_menu">CHECK OUT</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--End of upper__header-->
+
+        <div class="down__header">
+            <div class="section--order">
+                <div class="inner clearfix">
+                    <ul class="menu-list-order">
+                        <li><a href="restaurant.html">SUGGESTION & RESTAURANTS</a></li>
+                        <li><a href="#">EVENT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--End of down__header-->
+    </header>
+    <!--End of header-->
+
+    <div class="gridContainer">
+    <div id="leftColumn">
+        <div id="paymentInfo">
+            <div class="cardsTitle">
+                <p>Select Payment Card</p>
+            </div>
+            <label for="card1" class="creditCards" id="cc1">
+                <input type="radio" name="cards" id="card1" value="card1" checked>
+                <img src="../images/Credit/creditcard.png" alt="card1">
+                <div>
+                    <p class="cardName">Card Ending: 1111</p>
+                </div>
+            </label>
+            <label for="card2" class="creditCards" id="cc2">
+                <input type="radio" name="cards" id="card2" value="card2">
+                <img src="../images/Credit/creditcard.png" alt="card2">
+                <div>
+                    <p class="cardName">Card Ending: 2222</p>
+                </div>
+            </label>
+            <label for="card3" class="creditCards" id="cc3">
+                <input type="radio" name="cards" id="card3" value="card3">
+                <img src="../images/Credit/creditcard.png" alt="card2">
+                <div>
+                    <p class="cardName">Card Ending: 3333</p>
+                </div>
+            </label>
+            <div class="enterCard" id="cardForm">
+                <form id="myForm" name="creditCardForm" onsubmit="addNewCard(this.cardName.value, this.cardNumber.value, this.cardCode.value)">
+                    <label for="cardName">Enter Card Name</label>
+                    <input type="text" name="cardName" id="cardName" maxlength="10" title="Name must 10 or less letters, capitals allowed." required>
+                    <label for="cardNumber">Enter Card Number</label>
+                    <input type="text" name="cardNumber" id="cardNumber" minlength="16" maxlength="16" pattern="([0-9]{16})" title="16 digit card number on front of card." required>
+                    <label for="cardCode">Enter 3 Digit Code</label>
+                    <input type="password" name="cardCode" id="cardCode" minlength="3" maxlength="3" pattern="([0-9]{3})" title="3 digit security code on back of card." required>
+                    <br>
+                    <button type="submit" id="submitForm">Add New Card</button>
+                </form>
+            </div>
+            <div class="addCard" onclick="addCard()">
+                <p id="addC">Add Card +</p>
+                <p id="cancelC">Cancel Add Card</p>
+            </div>
+        </div>
+    </div>
+    <div class="middleColumn">
+        <div class="title">
+            <h1>Your Cart:</h1>
+        </div>
+        <div class="itemListContainer" id="itemListContainer">
+            <div class="cartButtonsContainer">
+                <div class="cartButton" onclick="window.history.back()">
+                    <p>Back to Last Restaurant</p>
+                </div>
+                <div class="cartButton" onclick="startOver(this)">
+                    <p>Start Over from Scratch</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rightColumn">
+        <div class="totals">
+            <p class="totalsPrices" id="subTotal">Sub Total: $0.00</p>
+            <p class="totalsPrices" id="deliveryFee">Delivery Fee: $3.50</p>
+            <p class="totalsPrices" id="grandTotal"></p>
+            <div class="confirmOrder" onclick="checkout(this)">
+                <p>Confirm Order</p>
+                <!-- <a href="../html/KFCFoodSelection.html"></a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--footer-->
+    <footer class="section">
+        <div class="inner">
+            <ul class="footerWrapper">
+                <li>
+                    <ul class="footer_menu_wrapper">
+                        <li class="footer_title_menu">GROUP 47 Delivery Company</li>
+                        <li class="footer_logo">
+                            <div class="footer_img_con">
+                                <img src="../images/Plate%20Logo%20Separated.png" alt="Logo">
+                            </div>
+                        </li>
+                        <li class="social-media">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/watch?v=f8QUBX20dXs&feature=youtu.be"
+                               target="blank_"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-reddit"></i></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer_menu_wrapper" style="text-indent: 100px">
+                        <li class="footer_title_menu active cursor_pointer">ABOUT US</li>
+                        <li class="footer_title_menu active cursor_pointer">RESTAURANT</li>
+                        <li class="footer_title_menu active cursor_pointer">CUSTOMER SERVICE</li>
+                        <li class="footer_title_menu active cursor_pointer">DELIVERY POLICY</li>
+                        <li class="footer_title_menu active cursor_pointer">CHECK OUT</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer_menu_wrapper" style="text-indent: 150px">
+                        <li class="footer_title_menu">GET IN TOUCH</li>
+                        <!--contact Section-->
+                        <li class="footer-section contact">
+                            <form action="#" method="post" style="margin-left: 150px">
+                                <input type="email" name="email" class="text-input contact-input"
+                                       placeholder="Enter your email">
+                                <textarea name="message" class="text-input contact-input"
+                                          placeholder="Enter your Message"></textarea>
+                                <button type="submit" class="btn btn-big cursor_pointer"> <i
+                                        class="fas fa-envelope"></i></button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!--Bottom block of footer-->
+        <div class="footer-bottom">
+            &copy; Group47INC | Designed by Group 47
+        </div>
+    </footer>
+    <!--End of footer-->
+
+    <script src="../js/checkout.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/Category.js"></script>
+
+</div>
+
+</body>
+
+</html>

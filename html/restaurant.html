@@ -1,0 +1,2925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FoodPlan_47</title>
+    <!--css-->
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/Header.css" type="text/css">
+    <link rel="stylesheet" href="../css/Suggest.css" type="text/css">
+    <link rel="stylesheet" href="../css/Restaurants.css" type="text/css">
+    <link rel="stylesheet" href="../css/Footer.css" type="text/css">
+    <link rel="stylesheet" href="../css/SideGutter.css" type="text/css">
+    <link rel="stylesheet" href="../css/FoodContainer.css" type="text/css">
+    <link rel="stylesheet" href="../css/Food.css" type="text/css">
+    <link rel="stylesheet" href="../css/Category.css" type="text/css">
+    <!--js-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel = "icon" href = "../images/Plate%20Logo%20Concept.png">
+    <script src="../js/setTimeScript.js" defer></script>
+    <script src="../js/visitedRestaurantsScript.js" defer></script>
+    <script src="../js/restaurantScrolling.js" defer></script>
+    <script src="../js/scrollToTop.js" defer></script>
+    <script src="../js/localCart.js" defer></script>
+    <script src="../js/addAddress.js" defer></script>
+</head>
+
+
+<body>
+<div class="body__container">
+
+    <!--Header-->
+    <header class="header fixed">
+        <div class="upper__header">
+            <div class="inner">
+                <ul class="logo_wrapper">
+                    <li id="click-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="logo">
+                        <a href="restaurant.html"><img src="../images/Plate%20Logo%20Separated.png" alt="logo"></a>
+                    </li>
+                </ul>
+                <!--End of logo_wrapper-->
+
+                <ul class="time_addresses_wrap_box address_btn">
+                    <li class="cursor_pointer">
+                        <ul class="addresses_wrap_box">
+                            <li class="imgCon_1">
+                                <img src="../images/time%20icon%201.png" alt="time">
+                            </li>
+                            <li class="TIME"> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                            <li class="radio"></li>
+                        </ul>
+                    </li>
+                    <li class="cursor_pointer">
+                        <ul class="addresses_wrap_box">
+                            <li class="imgCon_1">
+                                <img src="../images/Address%20Icon%202.png" alt="addresses">
+                            </li>
+                            <li class="addresses"> 220 Dysart Road Winnipeg, MB</li>
+                            <li class="address_controller cursor_pointer">
+                                <img src="../images/Down%20Icon%202.png" alt="Down" />
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div>
+                    <ul class="addresses_timeSelection">
+                        <li class="addresses_big_wrapper">
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                <li class="radio">
+                                </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME">OCT 15TH 8:30 PM ~ 9:00 PM</li>
+                                <li class="radio">
+                                </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1"></li>
+                                <li class="TIME"> OCT 15TH 9:00 PM ~ 9:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME "> OCT 15TH 9:30 PM ~ 10:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME "> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 10:30 PM ~ 11:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 11:30 PM ~ 12:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 12:30 PM ~ 13:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                        </li>
+                        <li class = "addressListContainer" id ="addresses">
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="addresses"> 220 Dysart Road Winnipeg, MB</li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <form id="addressForm" name="creditCardForm" onsubmit="addAddress(this.addressNumber.value, this.addressName.value)">
+                                <label for="addressNumber">Address Number</label>
+                                <br>
+                                <input type="text" name="cardName" id="addressNumber" maxlength="10" title="Digits 0-9 only, max length 10." required>
+                                <br>
+                                <label for="addressName">Street Name</label>
+                                <br>
+                                <input type="text" name="cardCode" id="addressName" minlength="3" maxlength="20" title="Letters a-z, capitals allowed, max length 20." required>
+                                <br>
+                                <button type="submit" id="submitAddress">Add New Address</button>
+                            </form>
+
+                            <ul class = "addresses_wrap_box" onclick="toggleAddressForm()">
+                                <li class = "imgCon_1">
+                                </li>
+                                <li class = "addresses" id="enterAddress"> Enter Your Addresses </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="stop"></div>
+                </div>
+
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">
+                            <img src="../images/ICON/Globe%20Icon.png" alt="lang">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/ICON/User%20Icon%202.png" alt="User">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html">
+                            <div class="header_img">
+                                <img src="../images/ICON/Sign%20Out%20Icon.png" alt="singOut">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <!--End of inner-->
+
+            <div class="ham-Menu">
+                <div class="inner">
+                    <ul class="hamWrapper">
+                        <li>
+                            <ul class="ham_menu_wrapper">
+                                <li class="ham_title_menu" id = "ham_title">SUGGESTION & RESTAURANT</li>
+                                <li class="ham_sub_menu" id = "ham_sub">Suggestion</li>
+                                <li class="ham_sub_menu" id = "ham_all">All Restaurant</li>
+                                <li class="ham_sub_menu" id = "ham_food"> Food Type </li>
+                                <li class="ham_sub_menu" id = "ham_price"> Price </li>
+                                <li class="ham_sub_menu" id = "ham_continent"> Continent </li>
+                                <li class="ham_sub_menu" id = "ham_rating"> Rating </li>
+                                <li class="ham_sub_menu" id = "ham_del"> Delivery Time </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="ham_menu_wrapper">
+                                <li class="ham_title_menu" style="text-indent: 100px">EVENT</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Upcoming Event</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Event Calendar</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Event List </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="ham_menu_wrapper" style="text-indent: 150px">
+                                <li class="ham_title_menu">MY ACCOUNT</li>
+                                <li class="ham_title_menu">ABOUT US</li>
+                                <li class="ham_title_menu">CUSTOMER SERVICE</li>
+                                <li class="ham_title_menu">DELIVERY POLICY</li>
+                                <li class="ham_title_menu">CHECK OUT</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--End of upper__header-->
+
+        <div class="down__header">
+            <div class="section--order">
+                <div class="inner clearfix">
+                    <ul class="menu-list-order">
+                        <li><a href="restaurant.html">SUGGESTION & RESTAURANTS</a></li>
+                        <li><a href="#">EVENT</a></li>
+                    </ul>
+                    <div class="cart-list-order">
+                        <div class="header_img cart_icon">
+                            <img src="../images/img/Cart%20White.png" alt="cart" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of down__header-->
+
+        <div class = "cart_menu">
+            <!-- right section -->
+            <div class="right-side-gutter side-gutter">
+                <div class="header-cart-wrapper">
+                    <div class=header-cart-title-wrapper>
+                        <h2>Your Cart</h2>
+                    </div>
+                    <div class="header-cart-inner-wrapper">
+                        <ul class="header-cart-list">
+                            <li class="cart-items">Your Cart is Empty</li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li class="cart-items"></li>
+                            <li id="local-cart-total" class="cart-items" style="text-align: center">Total: $0
+                            </li>
+                            <button id="checkout-btn" class="header_checkout_btn"><a
+                                    href="checkout.html">Checkout</a></button>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End of header-->
+
+    <!--section--suggests-->
+    <section class="section section--suggests">
+        <div class="inner">
+            <div class="suggestion--wrapper">
+                <div class="page_name">
+                    <h1>SUGGESTIONS & RESTAURANTS</h1>
+                </div>
+                <div class="description">
+                    <h2 class="des__title"> SUGGESTION</h2>
+                    <div class="suggestion--controller" id="controller" style="display: none">►</div>
+                </div>
+                <div class="section__wrapper">
+                    <ul class="nav_wrapper" id="color_wrapper">
+                        <li class="red nav_menu">
+                            UPCOMING EVENT
+                        </li>
+                        <li class="black nav_menu">
+                            YOUR CHOICE
+                        </li>
+                        <li class="black nav_menu">
+                            CELEBRITY'S CHOICE
+                        </li>
+                        <li class="black nav_menu">
+                            LOCAL'S CHOICE
+                        </li>
+                        <li class="black nav_menu">
+                            GROUP47'S CHOICE
+                        </li>
+                    </ul>
+                    <div class="wrap">
+                        <div class="moving--wrapper">
+                            <div class=cuisine_wrapper>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper" style="height: 300px">
+                                        <div class="cuisine_img rank1" style="height: 300px">
+                                            <img src="../images/Calendar%20Fixed.png" alt="timHorton" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Taco%20Bell%20Long.jpg" alt="TacoBell" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #2 </li>
+                                                <li> #Mexican </li>
+                                                <li> #Taco </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Taco Bell </h3>
+                                                <div class="button"> <a
+                                                        href="../html/tacoBellFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Jade%20276%20Long.jpg"
+                                                alt="burger King" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #3 </li>
+                                                <li> #Chinese </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Jade 276 </h3>
+                                                <div class="button"> <a
+                                                        href="../html/jade276FoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Kimchi%20Sushi%20Long.jpg"
+                                                alt="starbucks" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Korean </li>
+                                                <li> #Japanese </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Kimchi Sushi </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KimchiFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/KFC%20Long.jpg" alt="Thai express" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Event </li>
+                                                <li> #FastFood </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> KFC </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KFCFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=cuisine_wrapper>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img rank1">
+                                            <img src="../images/Longimages/Mcdonalds%20Long.jpg" alt="timHorton" />
+                                        </div>
+                                        <div class="cuisine_des ">
+                                            <ul class="hashItem">
+                                                <li> #1 </li>
+                                                <li> #Fast Food </li>
+                                                <li> #Hamburger </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <h3> McDonald's</h3>
+                                            <div class="button"><a
+                                                    href="../html/McdonaldsFoodSelection.html">order</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Taco%20Bell%20Long.jpg" alt="TacoBell" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #2 </li>
+                                                <li> #Mexican </li>
+                                                <li> #Taco </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Taco Bell </h3>
+                                                <div class="button"> <a
+                                                        href="../html/tacoBellFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Jade%20276%20Long.jpg"
+                                                alt="burger King" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #3 </li>
+                                                <li> #Chinese </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Jade 276 </h3>
+                                                <div class="button"> <a
+                                                        href="../html/jade276FoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Kimchi%20Sushi%20Long.jpg"
+                                                alt="starbucks" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Korean </li>
+                                                <li> #Japanese </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Kimchi Sushi </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KimchiFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/KFC%20Long.jpg" alt="Thai express" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Event </li>
+                                                <li> #FastFood </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> KFC </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KFCFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=cuisine_wrapper>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img rank1">
+                                            <img src="../images/Longimages/Mcdonalds%20Long.jpg" alt="timHorton" />
+                                        </div>
+                                        <div class="cuisine_des ">
+                                            <ul class="hashItem">
+                                                <li> #1 </li>
+                                                <li> #Fast Food </li>
+                                                <li> #Hamburger </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <h3> McDonald's</h3>
+                                            <div class="button"><a
+                                                    href="../html/McdonaldsFoodSelection.html">order</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Taco%20Bell%20Long.jpg" alt="TacoBell" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #2 </li>
+                                                <li> #Mexican </li>
+                                                <li> #Taco </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Taco Bell </h3>
+                                                <div class="button"> <a
+                                                        href="../html/tacoBellFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Jade%20276%20Long.jpg"
+                                                alt="burger King" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #3 </li>
+                                                <li> #Chinese </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Jade 276 </h3>
+                                                <div class="button"> <a
+                                                        href="../html/jade276FoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Kimchi%20Sushi%20Long.jpg"
+                                                alt="starbucks" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Korean </li>
+                                                <li> #Japanese </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Kimchi Sushi </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KimchiFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/KFC%20Long.jpg" alt="Thai express" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Event </li>
+                                                <li> #FastFood </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> KFC </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KFCFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=cuisine_wrapper>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img rank1">
+                                            <img src="../images/Longimages/Mcdonalds%20Long.jpg" alt="timHorton" />
+                                        </div>
+                                        <div class="cuisine_des ">
+                                            <ul class="hashItem">
+                                                <li> #1 </li>
+                                                <li> #Fast Food </li>
+                                                <li> #Hamburger </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <h3> McDonald's</h3>
+                                            <div class="button"><a
+                                                    href="../html/McdonaldsFoodSelection.html">order</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Taco%20Bell%20Long.jpg" alt="TacoBell" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #2 </li>
+                                                <li> #Mexican </li>
+                                                <li> #Taco </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Taco Bell </h3>
+                                                <div class="button"> <a
+                                                        href="../html/tacoBellFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Jade%20276%20Long.jpg"
+                                                alt="burger King" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #3 </li>
+                                                <li> #Chinese </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Jade 276 </h3>
+                                                <div class="button"> <a
+                                                        href="../html/jade276FoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Kimchi%20Sushi%20Long.jpg"
+                                                alt="starbucks" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Korean </li>
+                                                <li> #Japanese </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Kimchi Sushi </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KimchiFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/KFC%20Long.jpg" alt="Thai express" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Event </li>
+                                                <li> #FastFood </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> KFC </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KFCFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=cuisine_wrapper>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img rank1">
+                                            <img src="../images/Longimages/Mcdonalds%20Long.jpg" alt="timHorton" />
+                                        </div>
+                                        <div class="cuisine_des ">
+                                            <ul class="hashItem">
+                                                <li> #1 </li>
+                                                <li> #Fast Food </li>
+                                                <li> #Hamburger </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <h3> McDonald's</h3>
+                                            <div class="button"><a
+                                                    href="../html/McdonaldsFoodSelection.html">order</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cuisine_big_wrapper">
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Taco%20Bell%20Long.jpg" alt="TacoBell" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #2 </li>
+                                                <li> #Mexican </li>
+                                                <li> #Taco </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Taco Bell </h3>
+                                                <div class="button"> <a
+                                                        href="../html/tacoBellFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Jade%20276%20Long.jpg"
+                                                alt="burger King" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #3 </li>
+                                                <li> #Chinese </li>
+                                                <li> #Chicken </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Jade 276 </h3>
+                                                <div class="button"> <a
+                                                        href="../html/jade276FoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/Kimchi%20Sushi%20Long.jpg"
+                                                alt="starbucks" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Korean </li>
+                                                <li> #Japanese </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> Kimchi Sushi </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KimchiFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuisine_small_wrapper">
+                                        <div class="cuisine_img">
+                                            <img src="../images/Longimages/KFC%20Long.jpg" alt="Thai express" />
+                                        </div>
+                                        <div class="cuisine_des">
+                                            <ul class="hashItem" style="height: 20px">
+                                                <li> #4 </li>
+                                                <li> #Event </li>
+                                                <li> #FastFood </li>
+                                            </ul>
+                                            <div class="small_wrapper">
+                                                <h3> KFC </h3>
+                                                <div class="button"> <a
+                                                        href="../html/KFCFoodSelection.html">order</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--inner-->
+    </section>
+    <!--End of section--suggests-->
+
+    <!--section--restaurants-->
+    <section class="section section--restaurants" style="background: #f7f7f7">
+        <div class="inner">
+            <div class="description">
+                <h2 class="des__title"> RESTAURANTS </h2>
+            </div>
+            <div class="main-content-wrapper">
+                <!-- left section -->
+                <div class="left-side-gutter side-gutter">
+                    <div class="section-wrapper">
+                        <ul class="section-list">
+                            <li id="all-section"> ALL RESTAURANTS </li>
+                            <li id="type-section"> FOOD TYPE </li>
+                            <li id="sub-type-first" class="sub-type-section sub-section"> CHICKEN </li>
+                            <li id="sub-type-second" class="sub-type-section sub-section"> HAMBURGER </li>
+                            <li id="sub-type-third" class="sub-type-section sub-section"> PIZZA </li>
+                            <li id="sub-type-fourth" class="sub-type-section sub-section"> SEAFOOD </li>
+                            <li id="sub-type-fifth" class="sub-type-section sub-section"> DESSERT </li>
+                            <li id="price-section"> PRICE </li>
+                            <li id="sub-price-first" class="sub-price-section sub-section"> $5~ $10 </li>
+                            <li id="sub-price-second" class="sub-price-section sub-section"> $15~ $20 </li>
+                            <li id="sub-price-third" class="sub-price-section sub-section"> $20~ $25 </li>
+                            <li id="sub-price-fourth" class="sub-price-section sub-section"> $25~ $30 </li>
+                            <li id="country-section"> CONTINENT </li>
+                            <li id="sub-country-first" class="sub-country-section sub-section"> ASIAN </li>
+                            <li id="sub-country-second" class="sub-country-section sub-section"> WESTERN </li>
+                            <li id="rate-section"> RATING </li>
+                            <li id="sub-rate-first" class="sub-rate-section sub-section"> 9.5 ~ 10 </li>
+                            <li id="sub-rate-second" class="sub-rate-section sub-section"> 9 ~ 9.49 </li>
+                            <li id="sub-rate-third" class="sub-rate-section sub-section"> 8.5 ~ 8.99 </li>
+                            <li id="sub-rate-fourth" class="sub-rate-section sub-section"> 8~ 8.49 </li>
+                            <li id="delivery-section"> DELIVERY TIME </li>
+                            <li id="sub-delivery-first" class="sub-del-section sub-section"> ~ 10 min </li>
+                            <li id="sub-delivery-second" class="sub-del-section sub-section"> 10 min ~ 15 min </li>
+                            <li id="sub-delivery-third" class="sub-del-section sub-section"> 15 min ~ 20 min </li>
+                            <li id="sub-delivery-fourth" class="sub-del-section sub-section"> 25 min ~ 30 min </li>
+                            <li id="sub-delivery-fifth" class="sub-del-section sub-section"> 30 min ~ </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--End of left-side-gutter-->
+
+                <!-- Middle section -->
+                <div class=content-wrapper>
+                    <div id="category1" class="category-sections all_section">
+                        <h2> ALL RESTAURANTS </h2>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/DairyQueenFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Dairy Queen (Ice Cream)/Dairy Queen Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Dairy Queen</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/jade276FoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Jade 276 Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Jade 276</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/KimchiFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Kimchi Sushi Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.6 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Kimchi Sushi </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 20 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            15 Min ~ 21 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            3424 Regent Ave
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            782 Sherbrook ST
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.7 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.7 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/PizzahutFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Pizza Hut (Pizza)/Pizza Hut Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 6.8 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Pizza Hut</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            30 Min ~ 40 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/tacoBellFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Taco Bell Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Taco Bell </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/TimHortonsFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Tim Hortons (Cafe)/Tim Hortons Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.9 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Tim Hortons</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1858 King Edward St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="category2" class="category-sections food_type_selection">
+                        <h2> FOOD TYPE </h2>
+                        <h3> CHICKEN </h3>
+                        <a class="foodContainer" href="../html/jade276FoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Jade 276 Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Jade 276</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.7 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <h3> HAMBURGER </h3>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div id="item9" class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            782 Sherbrook ST
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div id="item10" class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.7 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/tacoBellFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Taco Bell Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Taco Bell </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3> PIZZA </h3>
+                        <a class="foodContainer" href="../html/PizzahutFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Pizza Hut (Pizza)/Pizza Hut Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 6.8 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Pizza Hut</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            30 Min ~ 40 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3> SEAFOOD </h3>
+                        <a class="foodContainer" href="../html/jade276FoodSelection.html" style="display:block;">
+                            <div id="item6" class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Jade 276 Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Jade 276</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/KimchiFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Kimchi Sushi Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.6 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Kimchi Sushi </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 20 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3> DESSERTS </h3>
+                        <a class="foodContainer" href="../html/DairyQueenFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Dairy Queen (Ice Cream)/Dairy Queen Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Dairy Queen</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/TimHortonsFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Tim Hortons (Cafe)/Tim Hortons Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.9 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Tim Hortons</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1858 King Edward St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="category3" class="category-sections price_selection">
+                        <h2> PRICE </h2>
+                        <h3> ~ $10 </h3>
+                        <a class="foodContainer" href="../html/DairyQueenFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Dairy Queen (Ice Cream)/Dairy Queen Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Dairy Queen</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/KimchiFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Kimchi Sushi Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.6 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Kimchi Sushi </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 20 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.7 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/tacoBellFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Taco Bell Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Taco Bell </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/TimHortonsFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Tim Hortons (Cafe)/Tim Hortons Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.9 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Tim Hortons</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1858 King Edward St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/jade276FoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Jade 276 Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Jade 276</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3> $10 ~ $20 </h3>
+                        <a class="foodContainer" href="../html/KimchiFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Kimchi Sushi Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.6 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Kimchi Sushi </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 20 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            782 Sherbrook ST
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/jade276FoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Jade 276 Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Jade 276</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3> $20 ~ $30 </h3>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 15 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            3424 Regent Ave
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3> $30 ~ </h3>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            31 Min ~ 41 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            11114 Brandt ST
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="category4" class="category-sections country_selection">
+                        <h2>CONTINENT</h2>
+                        <h3>ASIAN</h3>
+                        <a class="foodContainer" href="../html/KimchiFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Kimchi Sushi Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.6 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Kimchi Sushi </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 20 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/jade276FoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Jade 276 Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Jade 276</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3>WESTERN</h3>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.7 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/tacoBellFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Taco Bell Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Taco Bell </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/DairyQueenFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Dairy Queen (Ice Cream)/Dairy Queen Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Dairy Queen</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/TimHortonsFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Tim Hortons (Cafe)/Tim Hortons Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.9 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Tim Hortons</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1858 King Edward St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/PizzahutFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Pizza Hut (Pizza)/Pizza Hut Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 6.8 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Pizza Hut</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            30 Min ~ 40 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="category5" class="category-sections rate_selection">
+                        <h2>RATE</h2>
+                        <h3>9.5~10.0</h3>
+                        <a class="foodContainer" href="../html/TimHortonsFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Tim Hortons (Cafe)/Tim Hortons Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.9 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Tim Hortons</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1858 King Edward St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3>9.0~9.5</h3>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div id="item1" class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/jade276FoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Jade 276 Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Jade 276</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <h3>8.0~9.0</h3>
+                        <a class="foodContainer" href="../html/KimchiFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Kimchi Sushi Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.6 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Kimchi Sushi </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 20 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.7 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <h3>~8.0</h3>
+                        <a class="foodContainer" href="../html/DairyQueenFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Dairy Queen (Ice Cream)/Dairy Queen Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Dairy Queen</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/tacoBellFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Taco Bell Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Taco Bell </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 31 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/PizzahutFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Pizza Hut (Pizza)/Pizza Hut Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 6.8 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Pizza Hut</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            30 Min ~ 40 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="category6" class="category-sections del_selection">
+                        <h2>DELIVERY TIME </h2>
+                        <h3> ~ 5 MIN</h3>
+                        <a class="foodContainer" href="../html/TimHortonsFoodSelection.html" style="display:block;">
+                            <div id="item7" class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Tim Hortons (Cafe)/Tim Hortons Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.9 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Tim Hortons</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1858 King Edward St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3> 5 MIN ~ 10 MIN </h3>
+                        <a class="foodContainer" href="../html/KFCFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container">
+                                    <img src="../images/img/Food/KFC%20main%20pic.jpg" alt="kfc" />
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.0 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>KFC </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/jade276FoodSelection.html" style="display:block;">
+                            <div id="item5" class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Jade 276 Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Jade 276</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 9.3 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            5 Min ~ 10 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <h3> 10 MIN ~ 20 MIN </h3>
+                        <a class="foodContainer" href="../html/KimchiFoodSelection.html" style="display:block;">
+                            <div id="item4" class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Kimchi Sushi Option 2.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.6 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Kimchi Sushi </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 20 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/McdonaldsFoodSelection.html" style="display: block">
+                            <div id="item2" class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Mcdonalds Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 8.7 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> McDonald's </h2>
+                                </div>
+
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            10 Min ~ 20 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                        <h3> 20 MIN ~ 30 MIN </h3>
+                        <a class="foodContainer" href="../html/DairyQueenFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Dairy Queen (Ice Cream)/Dairy Queen Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Dairy Queen</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            20 ~ 30 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/tacoBellFoodSelection.html" style="display: block">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Taco Bell Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Taco Bell </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            21 Min ~ 30 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/PizzahutFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Pizza Hut (Pizza)/Pizza Hut Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 6.8 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Pizza Hut</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            15 Min ~ 30 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <h3> 30 MIN ~ </h3>
+                        <a class="foodContainer" href="../html/DairyQueenFoodSelection.html" style="display:block;">
+                            <div class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Dairy Queen (Ice Cream)/Dairy Queen Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Dairy Queen</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            30 ~ 40 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/tacoBellFoodSelection.html" style="display: block">
+                            <div id="item3" class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/Longimages/Taco Bell Option 1.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 7.2 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2> Taco Bell </h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            35 Min ~ 45 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            Pembina Highway
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="foodContainer" href="../html/PizzahutFoodSelection.html" style="display:block;">
+                            <div id="item8" class="food-item-container">
+                                <div class="image-container"
+                                     style='background-image: url("../images/foodImages/Pizza Hut (Pizza)/Pizza Hut Long.jpg");'>
+                                </div>
+                                <div class="price-container">
+                                    <div class="rate"> 6.8 </div>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Pizza Hut</h2>
+                                </div>
+                                <div class="description-container">
+                                    <div class="time_con">
+                                        <div class="imgCon">
+                                            <img src="../images/time%20icon%201.png" alt="" />
+                                        </div>
+                                        <div class="time_des">
+                                            30 Min ~ 40 Min
+                                        </div>
+                                    </div>
+                                    <div class="address_con">
+                                        <div class="imgCon">
+                                            <img src="../images/Address%20Icon%202.png" alt="" />
+                                        </div>
+                                        <div class="address_des">
+                                            1385 McPhillips St
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!--End of Middle section-->
+
+                <!-- right section -->
+                <div class="right-side-gutter side-gutter">
+                    <div class="cart-wrapper">
+                        <div class=cart-title-wrapper>
+                            <h2> Previously Visited Restaurants </h2>
+                        </div>
+                        <div class="cart-inner-wrapper">
+                            <ul class="cart-list">
+                                <li class="visited-items">No Previously Visited Restaurants</li>
+                                <li class="visited-items"></li>
+                                <li class="visited-items"></li>
+                                <li class="visited-items"></li>
+                                <li class="visited-items"></li>
+                                <li class="visited-items"></li>
+                                <li class="visited-items"></li>
+                                <li class="visited-items"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--End of right-side-gutter-->
+            </div>
+        </div>
+    </section>
+    <!--End of section--restaurants-->
+
+    <!--footer-->
+    <footer class="section">
+        <div class="inner">
+            <ul class="footerWrapper">
+                <li>
+                    <ul class="footer_menu_wrapper">
+                        <li class="footer_title_menu">GROUP 47 Delivery Company</li>
+                        <li class="footer_logo">
+                            <div class="footer_img_con">
+                                <img src="../images/Plate%20Logo%20Separated.png" alt="Logo">
+                            </div>
+                        </li>
+                        <li class="social-media">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/watch?v=f8QUBX20dXs&feature=youtu.be"
+                                target="blank_"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-reddit"></i></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer_menu_wrapper" style="text-indent: 100px">
+                        <li class="footer_title_menu active cursor_pointer">ABOUT US</li>
+                        <li class="footer_title_menu active cursor_pointer">RESTAURANT</li>
+                        <li class="footer_title_menu active cursor_pointer">CUSTOMER SERVICE</li>
+                        <li class="footer_title_menu active cursor_pointer">DELIVERY POLICY</li>
+                        <li class="footer_title_menu active cursor_pointer">CHECK OUT</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer_menu_wrapper" style="text-indent: 150px">
+                        <li class="footer_title_menu">GET IN TOUCH</li>
+                        <!--contact Section-->
+                        <li class="footer-section contact">
+                            <form action="#" method="post" style="margin-left: 150px">
+                                <input type="email" name="email" class="text-input contact-input"
+                                    placeholder="Enter your email">
+                                <textarea name="message" class="text-input contact-input"
+                                    placeholder="Enter your Message"></textarea>
+                                <button type="submit" class="btn btn-big cursor_pointer"> <i
+                                        class="fas fa-envelope"></i></button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!--Bottom block of footer-->
+        <div class="footer-bottom">
+            &copy; Group47INC | Designed by Group 47
+        </div>
+    </footer>
+    <!--End of footer-->
+</div>
+<!--End of body_container-->
+<script src="../js/main.js"></script>
+<script src="../js/Sub.js"></script>
+<script src="../js/Category.js"></script>
+<script src= "../js/Cart.js"></script>
+</body>
+</html>

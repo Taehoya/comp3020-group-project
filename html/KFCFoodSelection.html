@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> KFC_FoodPlan47</title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/Header.css" type="text/css">
+    <link rel="stylesheet" href="../css/Footer.css" type="text/css">
+    <link rel="stylesheet" href="../css/Food.css" type="text/css">
+    <link rel="stylesheet" href="../css/SideGutter.css" type="text/css">
+    <link rel="stylesheet" href="../css/FoodContainer.css" type="text/css">
+    <link rel="stylesheet" href="../css/foodBG.css" type="text/css">
+    <link rel = "icon" href = "../images/Plate%20Logo%20Concept.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <!-- nav bar javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="../js/setTimeScript.js" defer></script>
+    <script src="../js/visitedRestaurantsScript.js" defer></script>
+    <script src="../js/addAddress.js" defer></script>
+    <!-- side menu javascript -->
+
+</head>
+
+<body>
+    <div class="body__container">
+
+        <!--Header-->
+        <header class="header fixed">
+            <div class="upper__header">
+                <div class="inner">
+                    <ul class="logo_wrapper">
+                        <li id="click-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </li>
+                        <li class="logo">
+                            <a href="restaurant.html"><img src="../images/Plate%20Logo%20Separated.png" alt="logo"></a>
+                        </li>
+                    </ul>
+                    <!--End of logo_wrapper-->
+
+                    <ul class="time_addresses_wrap_box address_btn">
+                        <li class="cursor_pointer">
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                    <img src="../images/time%20icon%201.png" alt="time">
+                                </li>
+                                <li class="TIME"> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                <li class="radio"></li>
+                            </ul>
+                        </li>
+                        <li class="cursor_pointer">
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                    <img src="../images/Address%20Icon%202.png" alt="addresses">
+                                </li>
+                                <li class="addresses"> 220 Dysart Road Winnipeg, MB</li>
+                                <li class="address_controller cursor_pointer">
+                                    <img src="../images/Down%20Icon%202.png" alt="Down" />
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div>
+                        <ul class="addresses_timeSelection">
+                            <li class="addresses_big_wrapper">
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1">
+                                    </li>
+                                    <li class="TIME"> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                    <li class="radio">
+                                    </li>
+                                </ul>
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1">
+                                    </li>
+                                    <li class="TIME">OCT 15TH 8:30 PM ~ 9:00 PM</li>
+                                    <li class="radio">
+                                    </li>
+                                </ul>
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1"></li>
+                                    <li class="TIME"> OCT 15TH 9:00 PM ~ 9:30 PM </li>
+                                    <li class="radio"> </li>
+                                </ul>
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1">
+                                    </li>
+                                    <li class="TIME "> OCT 15TH 9:30 PM ~ 10:00 PM </li>
+                                    <li class="radio"> </li>
+                                </ul>
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1">
+                                    </li>
+                                    <li class="TIME "> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                    <li class="radio"> </li>
+                                </ul>
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1">
+                                    </li>
+                                    <li class="TIME"> OCT 15TH 10:30 PM ~ 11:30 PM </li>
+                                    <li class="radio"> </li>
+                                </ul>
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1">
+                                    </li>
+                                    <li class="TIME"> OCT 15TH 11:30 PM ~ 12:00 PM </li>
+                                    <li class="radio"> </li>
+                                </ul>
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1">
+                                    </li>
+                                    <li class="TIME"> OCT 15TH 12:30 PM ~ 13:00 PM </li>
+                                    <li class="radio"> </li>
+                                </ul>
+                            </li>
+                            <li class = "addressListContainer" id ="addresses">
+                                <ul class="addresses_wrap_box">
+                                    <li class="imgCon_1">
+                                    </li>
+                                    <li class="addresses"> 220 Dysart Road Winnipeg, MB</li>
+                                    <li class="radio"> </li>
+                                </ul>
+                                <form id="addressForm" name="creditCardForm" onsubmit="addAddress(this.addressNumber.value, this.addressName.value)">
+                                    <label for="addressNumber">Address Number</label>
+                                    <br>
+                                    <input type="text" name="cardName" id="addressNumber" maxlength="10" title="Digits 0-9 only, max length 10." required>
+                                    <br>
+                                    <label for="addressName">Street Name</label>
+                                    <br>
+                                    <input type="text" name="cardCode" id="addressName" minlength="3" maxlength="20" title="Letters a-z, capitals allowed, max length 20." required>
+                                    <br>
+                                    <button type="submit" id="submitAddress">Add New Address</button>
+                                </form>
+
+                                <ul class = "addresses_wrap_box" onclick="toggleAddressForm()">
+                                    <li class = "imgCon_1">
+                                    </li>
+                                    <li class = "addresses" id="enterAddress"> Enter Your Addresses </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="stop"></div>
+                    </div>
+
+                    <ul class="menu-list">
+                        <li>
+                            <a href="#">
+                                <img src="../images/ICON/Globe%20Icon.png" alt="lang">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../images/ICON/User%20Icon%202.png" alt="User">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../index.html">
+                                <div class="header_img">
+                                    <img src="../images/ICON/Sign%20Out%20Icon.png" alt="singOut">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!--End of inner-->
+
+                <div class="ham-Menu">
+                    <div class="inner">
+                        <ul class="hamWrapper">
+                            <li>
+                                <ul class="ham_menu_wrapper">
+                                    <li class="ham_title_menu" id = "ham_title">SUGGESTION & RESTAURANT</li>
+                                    <li class="ham_sub_menu" id = "ham_sub">Suggestion</li>
+                                    <li class="ham_sub_menu" id = "ham_all">All Restaurant</li>
+                                    <li class="ham_sub_menu" id = "ham_food"> Food Type </li>
+                                    <li class="ham_sub_menu" id = "ham_price"> Price </li>
+                                    <li class="ham_sub_menu" id = "ham_continent"> Continent </li>
+                                    <li class="ham_sub_menu" id = "ham_rating"> Rating </li>
+                                    <li class="ham_sub_menu" id = "ham_del"> Delivery Time </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="ham_menu_wrapper">
+                                    <li class="ham_title_menu" style="text-indent: 100px">EVENT</li>
+                                    <li class="ham_sub_menu" style="text-indent: 100px">Upcoming Event</li>
+                                    <li class="ham_sub_menu" style="text-indent: 100px">Event Calendar</li>
+                                    <li class="ham_sub_menu" style="text-indent: 100px">Event List </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="ham_menu_wrapper" style="text-indent: 150px">
+                                    <li class="ham_title_menu">MY ACCOUNT</li>
+                                    <li class="ham_title_menu">ABOUT US</li>
+                                    <li class="ham_title_menu">CUSTOMER SERVICE</li>
+                                    <li class="ham_title_menu">DELIVERY POLICY</li>
+                                    <li class="ham_title_menu">CHECK OUT</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--End of upper__header-->
+
+            <div class="down__header">
+                <div class="section--order">
+                    <div class="inner clearfix">
+                        <ul class="menu-list-order">
+                            <li><a href="restaurant.html">SUGGESTION & RESTAURANTS</a></li>
+                            <li><a href="#">EVENT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--End of down__header-->
+
+        </header>
+        <!--End of header-->
+
+        <!--section-restaurant-name-->
+        <section class="section restaurant-name" id="kfcLong">
+            <div class="inner">
+                <div class="restaurant-header">
+                    <div class="restaurant-title-wrapper">
+                        <h1>KFC</h1>
+                    </div>
+                    <div class="delivery">
+                        <h3>$1.99 delivery fee - 21-31 min Prep Time</h3>
+                    </div>
+                    <div class="rating">9.0</div>
+                </div>
+            </div>
+        </section>
+        <!--End of restaurant-name-->
+
+        <!--section--food-->
+        <section class="section section--food">
+            <div class="inner">
+                <div class="main-content-wrapper">
+
+                    <!-- left section -->
+                    <div class="left-side-gutter side-gutter">
+                        <div class="section-wrapper">
+                            <ul class="section-list">
+                                <li id="beef-section">Original Recipe Buckets</li>
+                                <li id="chicken-section">Sandwich Combos</li>
+                                <li id="seafood-section">Big Box Meals</li>
+                                <li id="appetizer-section">Snacks and Add-Ons</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Middle section -->
+                    <div class=content-wrapper>
+                        <h3 class="bread-crumb"><a href="restaurant.html">Restaurants & Suggestions</a> / KFC
+                        </h3>
+                        <!--End of bread-crumb-->
+
+                        <div id="category1" class="category-sections">
+                            <h2>Original Recipe Buckets</h2>
+                            <div id="item1" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/6 Piece Bucket with 2 sides.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$20.99</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>6 Piece Bucket with 2 large Fries</h2>
+                                </div>
+                                <div class="description-container">
+                                    6 pieces of our Canadian farm raised and hand-breaded Secret Recipe chicken with 2
+                                    orders
+                                    large
+                                    fries
+                                </div>
+                            </div>
+                            <div id="item2" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/10 Piece Bucket and 3 Large Sides.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$29.99</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>10 Piece Bucket and 3 Large Fries</h2>
+                                </div>
+                                <div class="description-container">
+                                    10 pieces of our Canadian farm raised and hand-breaded Secret Recipe chicken with 3
+                                    orders
+                                    oflarge
+                                    fries
+                                </div>
+                            </div>
+                            <div id="item3" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/14 Piece Bucket and 4 Large Sides.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$38.99</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>14 Piece Bucket and 4 Large Fries</h2>
+                                </div>
+                                <div class="description-container">
+                                    14 pieces of our Canadian farm raised and hand-breaded Secret Recipe chicken with 4
+                                    orders
+                                    of large fries
+                                </div>
+                            </div>
+                        </div>
+                        <div id="category2" class="category-sections">
+                            <h2>Sandwich Combos</h2>
+                            <div id="item5" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Big Crunch Sandwich Combo.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$9.29</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Big Crunch Sandwich Combo</h2>
+                                </div>
+                                <div class="description-container">
+                                    Our Big Crunch sandwich filled with crispy seasoned chicken breast and topped with
+                                    lettuce
+                                    and mayo. Paired with individual fries and a 255ml can of Brisk Iced Tea.
+                                </div>
+                            </div>
+                            <div id="item6" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Double Tender Sandwich Combo.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$7.19</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Double Tender Sandwich Combo</h2>
+                                </div>
+                                <div class="description-container">
+                                    The Colonel's Original sandwich filled with 2 white meat chicken tenders hand
+                                    breaded in
+                                    our 11 herbs and spices, topped with lettuce and pepper mayo. Served with individual
+                                    fries
+                                    and a 255ml can of Brisk Iced Tea
+                                </div>
+                            </div>
+                            <div id="item7" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Plant-Based Sandwich Combo.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$9.29</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Plant-based Sandwich Combo</h2>
+                                </div>
+                                <div class="description-container">
+                                    Our plant-based fillet coated in KFC breading, sandwiched in a potato bun, with
+                                    lettuce and
+                                    mayo, served with a 255ml can of 7UP and individual fries
+                                </div>
+                            </div>
+                            <div id="item8" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Zinger Sandwich Combo.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$9.29</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Zinger Sandwich Combo</h2>
+                                </div>
+                                <div class="description-container">
+                                    Our Zinger sandwich with spicy seasoned chicken breast topped with lettuce and spicy
+                                    mayo
+                                    for plenty of zing! Served with individual fries and a 255ml can of 7UP
+                                </div>
+                            </div>
+                        </div>
+                        <div id="category3" class="category-sections">
+                            <h2>Big Box Meals</h2>
+                            <div id="item9" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Big Crunch Stacker Box.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$13.99</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Big Crunch Stacker Box</h2>
+                                </div>
+                                <div class="description-container">
+                                    Our Big Crunch Stacker sandwich stacked with 2 with crispy seasoned chicken breasts
+                                    and
+                                    topped with lettuce and mayo. Served with individual fries, colslaw
+                                    and a 255ml can of Pepsi
+                                </div>
+                            </div>
+                            <div id="item10" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Double Tender Sandwich Box.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$9.19</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Double Tender Sandwich Box</h2>
+                                </div>
+                                <div class="description-container">
+                                    The Double Tender sandwich filled with 2 white meat chicken tenders hand breaded in
+                                    our 11
+                                    herbs and spices, topped with lettuce and mayo. Served with individual popcorn
+                                    chicken,
+                                    individual fries, individual pasta salad and a 255ml can of 7UP
+                                </div>
+                            </div>
+                            <div id="item11" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Boneless Box.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$11.79</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Boneless Box</h2>
+                                </div>
+                                <div class="description-container">
+                                    3 white meat chicken tenders, hand breaded in our signature 11 herbs and spices plus
+                                    an
+                                    individual popcorn chicken,individual fries, individual colslaw and a 255ml can of
+                                    Brisk
+                                    Iced Tea
+                                </div>
+                            </div>
+                            <div id="item12" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/4 Piece Chicken Box.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$11.79</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>4 Piece Chicken Box</h2>
+                                </div>
+                                <div class="description-container">
+                                    4 pieces of Canadian farm raised and hand-breaded Secret Recipe chicken, 2
+                                    individual
+                                    coleslaw sides
+                                    and a 255ml can of Pepsi
+                                </div>
+                            </div>
+                        </div>
+                        <div id="category4" class="category-sections">
+                            <h2>Snacks and Add-Ons</h2>
+                            <div id="item13" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Go Bucket - Kentucky Flatbread.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>Price: $3.99</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Go Bucket – Kentucky Flatbread</h2>
+                                </div>
+                                <div class="description-container">
+                                    Our flatbread filled with 1 white meat chicken tender hand-breaded in our 11 herbs
+                                    and
+                                    spices, topped with lettuce and pepper mayo. Served with individual fries. Good to
+                                    go!
+                                </div>
+                            </div>
+                            <div id="item14" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Small Popcorn Chicken.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$5.99</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Small Popcorn Chicken</h2>
+                                </div>
+                                <div class="description-container">
+                                    Bite-sized chicken. Big on flavour
+                                </div>
+                            </div>
+                            <div id="item15" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/6 Original Popcorn Chicken.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$9.99</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>6 Original Recipe Tenders </h2>
+                                </div>
+                                <div class="description-container">
+                                    6 white meat chicken tenders hand-breaded in our 11 herbs and spices
+                                </div>
+                            </div>
+                            <div id="item16" class="food-item-container">
+                                <div class="image-container"
+                                    style='background-image: url("../images/foodImages/KFC(Fast Food)/Poutine.jpg")'>
+                                </div>
+                                <div class="price-container">
+                                    <h2>$5.49</h2>
+                                </div>
+                                <div class="name-container">
+                                    <h2>Poutine </h2>
+                                </div>
+                                <div class="description-container">
+                                    KFC's take on a Canadian Classic. Crisp fries, cheese curds and gravy
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- right section -->
+                    <div class="right-side-gutter side-gutter">
+                        <div class="cart-wrapper">
+                            <div class=cart-title-wrapper>
+                                <h2>Your Cart</h2>
+                            </div>
+                            <div class="cart-inner-wrapper">
+                                <ul class="cart-list">
+                                    <li class="cart-items">Your Cart is Empty</li>
+                                    <li class="cart-items"></li>
+                                    <li class="cart-items"></li>
+                                    <li class="cart-items"></li>
+                                    <li class="cart-items"></li>
+                                    <li class="cart-items"></li>
+                                    <li class="cart-items"></li>
+                                    <li id="local-cart-total" class="cart-items" style="text-align: center">Total: $0
+                                    </li>
+                                    <button id="checkout-btn" class="checkout"><a
+                                            href="checkout.html">Checkout</a></button>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End of section--food-->
+
+        <!--footer-->
+        <footer class="section">
+            <div class="inner">
+                <ul class="footerWrapper">
+                    <li>
+                        <ul class="footer_menu_wrapper">
+                            <li class="footer_title_menu">GROUP 47 Delivery Company</li>
+                            <li class="footer_logo">
+                                <div class="footer_img_con">
+                                    <img src="../images/Plate%20Logo%20Separated.png" alt="Logo">
+                                </div>
+                            </li>
+                            <li class="social-media">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.youtube.com/watch?v=f8QUBX20dXs&feature=youtu.be"
+                                    target="blank_"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-reddit"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="footer_menu_wrapper" style="text-indent: 100px">
+                            <li class="footer_title_menu active cursor_pointer">ABOUT US</li>
+                            <li class="footer_title_menu active cursor_pointer">RESTAURANT</li>
+                            <li class="footer_title_menu active cursor_pointer">CUSTOMER SERVICE</li>
+                            <li class="footer_title_menu active cursor_pointer">DELIVERY POLICY</li>
+                            <li class="footer_title_menu active cursor_pointer">CHECK OUT</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="footer_menu_wrapper" style="text-indent: 150px">
+                            <li class="footer_title_menu">GET IN TOUCH</li>
+                            <!--contact Section-->
+                            <li class="footer-section contact">
+                                <form action="#" method="post" style="margin-left: 150px">
+                                    <input type="email" name="email" class="text-input contact-input"
+                                        placeholder="Enter your email">
+                                    <textarea name="message" class="text-input contact-input"
+                                        placeholder="Enter your Message"></textarea>
+                                    <button type="submit" class="btn btn-big cursor_pointer"> <i
+                                            class="fas fa-envelope"></i></button>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <!--Bottom block of footer-->
+            <div class="footer-bottom">
+                &copy; Group47INC | Designed by Group 47
+            </div>
+        </footer>
+        <!--End of footer-->
+    </div>
+    <!--End of body__container-->
+
+    <script src="../js/kfcSideMenu.js"></script>
+    <script src="../js/localCart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/Category.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+#tacoLong::before{
+    content :" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/Taeho's Long images/Taco Bell Long.jpg");
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+#pizzaLong::before{
+    content :" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/foodImages/Pizza Hut (Pizza)/Pizza Hut Long.jpg");
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+
+#timLong::before{
+    content :" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/foodImages/Tim Hortons (Cafe)/Tim Hortons Long.jpg");
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+#jadeLong::before{
+    content :" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/Taeho's Long images/Jade 276 Long.jpg");
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+#kfcLong::before{
+    content :" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/Taeho's Long images/KFC Long.jpg");
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+#kimchiLong::before{
+    content :" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/Taeho's Long images/Kimchi Sushi Long.jpg");
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+#McLong::before{
+    content :" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/Taeho's Long images/Mcdonalds Long.jpg");
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+#maryLong::before{
+    content :" ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/foodImages/Dairy Queen (Ice Cream)/Dairy Queen Long.jpg");
+    background-size: 100% auto;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

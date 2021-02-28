@@ -1,0 +1,37 @@
+/* just for testing */
+body{
+    background-color: black;
+}
+
+/* Styles are incomplete. Need to match other parts of the website and be positioned */
+
+#cart-wrapper{
+    height: min-content;
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow : 2px 10px 25px rgba(191,19,43,0.2);
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    padding:10px;
+    cursor: pointer;
+}
+
+#cart-wrapper ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.cart-items{
+    padding: 5px;
+    line-height: normal;
+    text-justify: auto;
+    height: 55px;
+    display: none;
+    border-radius: 20px;
+    box-shadow : 2px 10px 25px rgba(191,19,43,0.2);
+    margin-bottom: 10px;
+    /*font-size: 16px;*/
+    font-size: 1em;
+}

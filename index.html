@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--webpage title. Displayed in the tab-->
+    <title>FoodPlan_47</title>
+    <!--webpage icon. Displayed in the tab-->
+<!--    <link rel="icon" href="images/food-delivery.png">-->
+    <link rel = "stylesheet" href = "css/reset.css" type = "text/css">
+    <link rel = "stylesheet" href = "css/main.css" type = "text/css">
+    <link rel = "stylesheet" href = "css/Header.css" type = "text/css">
+    <!--css style sheet-->
+    <link rel="stylesheet" href="css/landing-page-styles.css">
+    <!--link to free icons-->
+    <link rel = "icon" href = "images/Plate%20Logo%20Concept.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class = "body__container">
+    <header class = "header fixed">
+        <div class = "upper__header">
+        <div class = "inner">
+            <ul class = "logo_wrapper">
+                <li id = "click-btn">
+                    =
+                </li>
+                <li class = "logo">
+                    <a href = "html/restaurant.html"><img src = "images/Plate%20Logo%20Separated.png" alt = "logo"></a>
+                </li>
+            </ul>
+            <!--End of logo_wrapper-->
+
+
+            <ul class = "menu-list">
+                <li>
+                    <a href = "#">
+                        <img src = "images/ICON/Globe%20Icon.png" alt = "lang">
+                    </a>
+                </li>
+                <li>
+                    <a href = "#">
+                        <img src = "images/ICON/User%20Icon%202.png" alt = "User">
+                    </a>
+                </li>
+                <li>
+                    <a href = "index.html">
+                        <div class = "header_img">
+                            <img src = "images/ICON/Sign%20Out%20Icon.png" alt = "singOut">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <!--End of inner-->
+
+        <div class="ham-Menu">
+            <div class = "inner">
+                <ul class = "hamWrapper">
+                    <li>
+                        <ul class = "ham_menu_wrapper">
+                            <li class = "ham_title_menu">SUGGESTION & RESTAURANT</li>
+                            <li class = "ham_sub_menu">Suggestion</li>
+                            <li class = "ham_sub_menu">All Restaurant</li>
+                            <li class = "ham_sub_menu"> Price </li>
+                            <li class = "ham_sub_menu"> Country </li>
+                            <li class = "ham_sub_menu"> Food Type </li>
+                            <li class = "ham_sub_menu"> Rate </li>
+                            <li class = "ham_sub_menu"> Delivery Time </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class = "ham_menu_wrapper">
+                            <li class = "ham_title_menu">EVENT</li>
+                            <li class = "ham_sub_menu">Upcoming Event</li>
+                            <li class = "ham_sub_menu">Event Calendar</li>
+                            <li class = "ham_sub_menu">Event List </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class = "ham_menu_wrapper" style="text-indent: 150px">
+                            <li class = "ham_title_menu">ABOUT US</li>
+                            <li class = "ham_title_menu">CUSTOMER SERVICE</li>
+                            <li class = "ham_title_menu">DELIVERY POLICY</li>
+                            <li class = "ham_title_menu">CHECK OUT</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+        <!--End of upper__header-->
+
+        <div class = "down__header">
+            <div class = "section--order">
+                <div class = "inner clearfix">
+                    <ul class = "menu-list-order">
+                        <li><a href = "html/restaurant.html">SUGGESTION & RESTAURANTS</a></li>
+                        <li><a href = "html/event.html">EVENT</a></li>
+                    </ul>
+                    <div class = "cart-list-order">
+                        <div class = "header_img">
+                            <img src = "images/img/Cart%20White.png" alt = "cart"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of down__header-->
+    </header>
+
+    <!--Main content-->
+    <div id="main-content-wrapper">
+        <!--Page title-->
+        <div id="title-wrapper">
+            <h1>When Would You Like Your Food To Be Delivered?</h1>
+        </div>
+        <!--Button area-->
+        <div id="button-wrapper">
+            <!--button to show time options-->
+            <button class="btn cursor_pointer" id="later-btn">
+                View Available Times<br/><i id="drop-down-icon" class="fas fa-angle-down"></i>
+            </button>
+            <!--List of time options. Hidden by default-->
+            <div id=time-options-wrapper>
+                <ul id="list-of-times">
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 8:00 AM Today ~ 9:00 AM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 9:00 AM Today ~ 10:00 AM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 10:00 AM Today ~ 11:00 AM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 11:00 AM Today ~ 12:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 1:00 PM Today ~ 2:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 2:00 AM Today ~ 3:00 AM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 3:00 PM Today ~ 4:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 4:00 PM Today ~ 5:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 5:00 PM Today ~ 6:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 6:00 PM Today ~ 7:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 7:00 PM Today ~ 8:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 8:00 PM Today ~ 9:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 9:00 PM Today ~ 10:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 10:00 PM Today ~ 11:00 PM Today</li>
+                    </a>
+                    <a href="html/restaurant.html">
+                        <li class="time-option"> 11:00 PM Today ~ 12:00 PM Today</li>
+                    </a>
+                </ul>
+            </div>
+            <!--Button to select current time for preparation-->
+            <button class="btn cursor_pointer" id="start-now-btn">Order Now<br><i class="far fa-clock"></i></button>
+        </div>
+    </div>
+
+    <script src="js/landingPageScript.js"></script>
+    <script src = "js/main.js"></script>
+</div>
+</body>
+</html>

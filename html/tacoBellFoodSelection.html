@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taco Bell_FoodPlan47</title>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../css/foodBG.css" type="text/css">
+    <link rel="stylesheet" href="../css/Header.css" type="text/css">
+    <link rel="stylesheet" href="../css/Footer.css" type="text/css">
+    <link rel="stylesheet" href="../css/Food.css" type="text/css">
+    <link rel="stylesheet" href="../css/SideGutter.css" type="text/css">
+    <link rel="stylesheet" href="../css/FoodContainer.css" type="text/css">
+    <link rel="stylesheet" href="../css/kfc-food-selection-styles.css" type="text/css">
+    <link rel = "icon" href = "../images/Plate%20Logo%20Concept.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <script src="../js/setTimeScript.js" defer></script>
+    <script src="../js/visitedRestaurantsScript.js" defer></script>
+    <script src="../js/addAddress.js" defer></script>
+</head>
+
+<body>
+<div class="body__container">
+    <!--Header-->
+    <header class="header fixed">
+        <div class="upper__header">
+            <div class="inner">
+                <ul class="logo_wrapper">
+                    <li id="click-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                    <li class="logo">
+                        <a href="restaurant.html"><img src="../images/Plate%20Logo%20Separated.png" alt="logo"></a>
+                    </li>
+                </ul>
+                <!--End of logo_wrapper-->
+
+                <ul class="time_addresses_wrap_box address_btn">
+                    <li class="cursor_pointer">
+                        <ul class="addresses_wrap_box">
+                            <li class="imgCon_1">
+                                <img src="../images/time%20icon%201.png" alt="time">
+                            </li>
+                            <li class="TIME"> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                            <li class="radio"></li>
+                        </ul>
+                    </li>
+                    <li class="cursor_pointer">
+                        <ul class="addresses_wrap_box">
+                            <li class="imgCon_1">
+                                <img src="../images/Address%20Icon%202.png" alt="addresses">
+                            </li>
+                            <li class="addresses"> 220 Dysart Road Winnipeg, MB</li>
+                            <li class="address_controller cursor_pointer">
+                                <img src="../images/Down%20Icon%202.png" alt="Down" />
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div>
+                    <ul class="addresses_timeSelection">
+                        <li class="addresses_big_wrapper">
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                <li class="radio">
+                                </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME">OCT 15TH 8:30 PM ~ 9:00 PM</li>
+                                <li class="radio">
+                                </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1"></li>
+                                <li class="TIME"> OCT 15TH 9:00 PM ~ 9:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME "> OCT 15TH 9:30 PM ~ 10:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME "> OCT 15TH 8:00 PM ~ 8:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 10:30 PM ~ 11:30 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 11:30 PM ~ 12:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="TIME"> OCT 15TH 12:30 PM ~ 13:00 PM </li>
+                                <li class="radio"> </li>
+                            </ul>
+                        </li>
+                        <li class = "addressListContainer" id ="addresses">
+                            <ul class="addresses_wrap_box">
+                                <li class="imgCon_1">
+                                </li>
+                                <li class="addresses"> 220 Dysart Road Winnipeg, MB</li>
+                                <li class="radio"> </li>
+                            </ul>
+                            <form id="addressForm" name="creditCardForm" onsubmit="addAddress(this.addressNumber.value, this.addressName.value)">
+                                <label for="addressNumber">Address Number</label>
+                                <br>
+                                <input type="text" name="cardName" id="addressNumber" maxlength="10" title="Digits 0-9 only, max length 10." required>
+                                <br>
+                                <label for="addressName">Street Name</label>
+                                <br>
+                                <input type="text" name="cardCode" id="addressName" minlength="3" maxlength="20" title="Letters a-z, capitals allowed, max length 20." required>
+                                <br>
+                                <button type="submit" id="submitAddress">Add New Address</button>
+                            </form>
+
+                            <ul class = "addresses_wrap_box" onclick="toggleAddressForm()">
+                                <li class = "imgCon_1">
+                                </li>
+                                <li class = "addresses" id="enterAddress"> Enter Your Addresses </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="stop"></div>
+                </div>
+
+                <ul class="menu-list">
+                    <li>
+                        <a href="#">
+                            <img src="../images/ICON/Globe%20Icon.png" alt="lang">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/ICON/User%20Icon%202.png" alt="User">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html">
+                            <div class="header_img">
+                                <img src="../images/ICON/Sign%20Out%20Icon.png" alt="singOut">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <!--End of inner-->
+
+            <div class="ham-Menu">
+                <div class="inner">
+                    <ul class="hamWrapper">
+                        <li>
+                            <ul class="ham_menu_wrapper">
+                                <li class="ham_title_menu" id = "ham_title">SUGGESTION & RESTAURANT</li>
+                                <li class="ham_sub_menu" id = "ham_sub">Suggestion</li>
+                                <li class="ham_sub_menu" id = "ham_all">All Restaurant</li>
+                                <li class="ham_sub_menu" id = "ham_food"> Food Type </li>
+                                <li class="ham_sub_menu" id = "ham_price"> Price </li>
+                                <li class="ham_sub_menu" id = "ham_continent"> Continent </li>
+                                <li class="ham_sub_menu" id = "ham_rating"> Rating </li>
+                                <li class="ham_sub_menu" id = "ham_del"> Delivery Time </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="ham_menu_wrapper">
+                                <li class="ham_title_menu" style="text-indent: 100px">EVENT</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Upcoming Event</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Event Calendar</li>
+                                <li class="ham_sub_menu" style="text-indent: 100px">Event List </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="ham_menu_wrapper" style="text-indent: 150px">
+                                <li class="ham_title_menu">MY ACCOUNT</li>
+                                <li class="ham_title_menu">ABOUT US</li>
+                                <li class="ham_title_menu">CUSTOMER SERVICE</li>
+                                <li class="ham_title_menu">DELIVERY POLICY</li>
+                                <li class="ham_title_menu">CHECK OUT</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!--End of upper__header-->
+
+        <div class="down__header">
+            <div class="section--order">
+                <div class="inner clearfix">
+                    <ul class="menu-list-order">
+                        <li><a href="restaurant.html">SUGGESTION & RESTAURANTS</a></li>
+                        <li><a href="#">EVENT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--End of down__header-->
+
+    </header>
+    <!--End of header-->
+
+    <!--section-restaurant-name-->
+    <section class="section restaurant-name" id="tacoLong">
+        <div class="inner">
+            <div class="restaurant-header">
+                <div class="restaurant-title-wrapper">
+                    <h1>Taco Bell</h1>
+                </div>
+                <div class="delivery">
+                    <h3>$2.99 delivery fee - 12-20 min Prep Time</h3>
+                </div>
+                <div class="rating">7.2</div>
+            </div>
+        </div>
+    </section>
+    <!--End of restaurant-name-->
+
+    <section class="section section--food">
+        <div class="inner">
+            <div class="main-content-wrapper">
+
+                <!-- left section -->
+                <div class="left-side-gutter side-gutter">
+                    <div class="section-wrapper">
+                        <ul class="section-list">
+                            <li id="beef-section">Tacos</li>
+                            <li id="chicken-section">Burritos</li>
+                            <li id="seafood-section">Specialties</li>
+                            <li id="appetizer-section">Sides</li>
+                            <li id="drink-section">Desserts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Middle section -->
+                <div class=content-wrapper>
+                    <h3 class="bread-crumb"><a href="restaurant.html">Restaurants & Suggestions</a> / Taco Bell
+                    </h3>
+                    <div id="category1" class="category-sections">
+                        <h2>Tacos</h2>
+                        <div id="item1" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Beef Crunchy Taco.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.69</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Beef Crunchy Taco</h2>
+                            </div>
+                            <div class="description-container">
+                                A crunchy corn taco shell filled with seasoned ground beef, crisp shredded lettuce
+                                and real
+                                cheddar cheese
+                            </div>
+                        </div>
+                        <div id="item2" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Beef Soft Taco.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.19</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Beef Soft Taco</h2>
+                            </div>
+                            <div class="description-container">
+                                When the answer is tacos get a warm, soft flour tortilla filled with seasoned ground
+                                beef,
+                                crisp shredded lettuce and real cheddar cheese
+                            </div>
+                        </div>
+                        <div id="item3" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Chicken Soft Taco.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.79</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Chicken Soft Taco</h2>
+                            </div>
+                            <div class="description-container">
+                                A warm, soft flour tortilla filled with grilled marinated chicken, zesty pico de
+                                gallo,
+                                crisp shredded lettuce, real cheddar cheese. Hello, party in your mouth!
+                            </div>
+                        </div>
+                    </div>
+                    <div id="category2" class="category-sections">
+                        <h2>Burritos</h2>
+                        <div id="item5" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/7-Layer Burrito Bean.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$2.49</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>7-Layer Burrito Bean</h2>
+                            </div>
+                            <div class="description-container">
+                                A warm, soft flour tortilla wrapped around seasoned rice, hearty beans and a blend
+                                of three
+                                cheeses - cheddar, Monterey Jack and part skim mozzarella. Add crisp shredded
+                                lettuce, diced
+                                ripe tomatoes, cool reduced-fat sour cream and guacamole for a veggie lover's
+                                delight
+                            </div>
+                        </div>
+                        <div id="item6" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/7-Layer Burrito Beef.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.69</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>7-Layer Burrito Beef</h2>
+                            </div>
+                            <div class="description-container">
+                                7 layers of deliciousness now featuring beef! A warm, soft flour tortilla wrapped
+                                around
+                                seasoned ground beef, rice and a blend of three cheeses - cheddar, Monterey Jack and
+                                part
+                                skim mozzarella. Add crisp shredded lettuce, diced ripe tomatoes, cool reduced-fat
+                                sour
+                                cream and guacamole
+                            </div>
+                        </div>
+                        <div id="item7" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Chili Cheese Burrito.jpg");'>
+
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.69</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Chili Cheese Burrito</h2>
+                            </div>
+                            <div class="description-container">
+                                Hearty beef chili and real cheddar cheese are melted together into a soft flour
+                                tortilla for
+                                mealtime perfection
+                            </div>
+                        </div>
+                        <div id="item8" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Chicken Burrito Supreme.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$3.19</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Chicken Burrito Supreme</h2>
+                            </div>
+                            <div class="description-container">
+                                Supreme means more of the good stuff. We’re talking grilled marinated chicken,
+                                seasoned
+                                refried beans, tangy red sauce, crisp shredded lettuce, real cheddar cheese, diced
+                                onion,
+                                diced ripe tomatoes and cool reduced-fat sour cream that’s all wrapped in a warm,
+                                soft flour
+                                tortilla
+                            </div>
+                        </div>
+                    </div>
+                    <div id="category3" class="category-sections">
+                        <h2>Specialties</h2>
+                        <div id="item9" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Beef Chalupa Supreme.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$2.49</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Beef Chalupa Supreme</h2>
+                            </div>
+                            <div class="description-container">
+                                Crunchy? Chewy? Both. A crunchy and chewy flatbread filled with seasoned beef,
+                                reduced-fat
+                                sour cream, crisp shredded lettuce, a 3-cheese blend and diced ripe tomatoes. Also
+                                available
+                                in steak, chicken or beans
+                            </div>
+                        </div>
+                        <div id="item10" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Beef Crunchwrap Supreme.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$2.99</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Beef Crunchwrap Supreme</h2>
+                            </div>
+                            <div class="description-container">
+                                A warm, soft flour tortilla filled with a crunchy tostada shell, seasoned ground
+                                beef and
+                                warm nacho cheese sauce on one side with cool reduced-fat sour cream, crisp shredded
+                                lettuce
+                                and diced ripe tomatoes on the other
+                            </div>
+                        </div>
+                        <div id="item11" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Cheesy Gordita Crunch.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$3.19</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Cheesy Gordita Crunch</h2>
+                            </div>
+                            <div class="description-container">
+                                Cheese on cheese on cheese on meat. Try our crunchy, seasoned ground beef-filled
+                                taco shell
+                                with zesty Spicy Ranch sauce, crisp shredded lettuce and real cheddar cheese, all
+                                wrapped in
+                                a melted 3-cheese layered flatbread
+                            </div>
+                        </div>
+                    </div>
+                    <div id="category4" class="category-sections">
+                        <h2>Sides</h2>
+                        <div id="item12" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Chili Cheese Fries.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.49</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Chili Cheese Fries</h2>
+                            </div>
+                            <div class="description-container">
+                                Freshly prepared french fries covered with hearty beef chili, warm and zesty nacho
+                                cheese
+                                sauce. Mmm.
+                            </div>
+                        </div>
+                        <div id="item13" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Fries Supreme.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.79</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Fries Supreme</h2>
+                            </div>
+                            <div class="description-container">
+                                These freshly prepared fries topped with seasoned ground beef, warm zesty nacho
+                                cheese
+                                sauce, diced ripe tomatoes and reduced-fat sour cream are a Canadian legend!
+                            </div>
+                        </div>
+                        <div id="item14" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Nachos Supreme.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$2.49</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Nachos Supreme</h2>
+                            </div>
+                            <div class="description-container">
+                                Our crisp, freshly prepared tortilla chips covered with seasoned ground beef, warm
+                                zesty
+                                nacho cheese sauce, diced ripe tomatoes and cool reduced-fat sour cream. An epic
+                                warm up for
+                                whatever comes next
+                            </div>
+                        </div>
+                    </div>
+                    <div id="category5" class="category-sections">
+                        <h2>Desserts</h2>
+                        <div id="item15" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Cinnamon Twists.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.00</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Cinnamon Twists</h2>
+                            </div>
+                            <div class="description-container">
+                                Our crispy, puffed corn twists are sprinkled with cinnamon and sugar and are
+                                seriously
+                                addictive. If you’re into delicious things, of course
+                            </div>
+                        </div>
+                        <div id="item16" class="food-item-container">
+                            <div class="image-container"
+                                style='background-image: url("../images/foodImages/Taco Bell (Fast Food)/Cinnabon Delights.jpg");'>
+                            </div>
+                            <div class="price-container">
+                                <h2>$1.69</h2>
+                            </div>
+                            <div class="name-container">
+                                <h2>Cinnabon Delights</h2>
+                            </div>
+                            <div class="description-container">
+                                Looking for something sweet? Treat yourself to four donut-holes filled with a sweet
+                                cream
+                                cheese frosting and dusted with cinnamon and sugar
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- right section -->
+                <div class="right-side-gutter side-gutter">
+                    <div class="cart-wrapper">
+                        <div class=cart-title-wrapper>
+                            <h2>Your Cart</h2>
+                        </div>
+
+                        <div class="cart-inner-wrapper">
+                            <ul class="cart-list">
+                                <li class="cart-items">Your Cart is Empty</li>
+                                <li class="cart-items"></li>
+                                <li class="cart-items"></li>
+                                <li class="cart-items"></li>
+                                <li class="cart-items"></li>
+                                <li class="cart-items"></li>
+                                <li class="cart-items"></li>
+                                <li id="local-cart-total" class="cart-items">Total: $0</li>
+                                <button id="checkout-btn" class="checkout">Checkout</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer class="section">
+        <div class="inner">
+            <ul class="footerWrapper">
+                <li>
+                    <ul class="footer_menu_wrapper">
+                        <li class="footer_title_menu">GROUP 47 Delivery Company</li>
+                        <li class="footer_logo">
+                            <div class="footer_img_con">
+                                <img src="../images/Plate%20Logo%20Separated.png" alt="Logo">
+                            </div>
+                        </li>
+                        <li class="social-media">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/watch?v=f8QUBX20dXs&feature=youtu.be"
+                                target="blank_"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-reddit"></i></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer_menu_wrapper" style="text-indent: 100px">
+                        <li class="footer_title_menu active cursor_pointer">ABOUT US</li>
+                        <li class="footer_title_menu active cursor_pointer">RESTAURANT</li>
+                        <li class="footer_title_menu active cursor_pointer">CUSTOMER SERVICE</li>
+                        <li class="footer_title_menu active cursor_pointer">DELIVERY POLICY</li>
+                        <li class="footer_title_menu active cursor_pointer">CHECK OUT</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="footer_menu_wrapper" style="text-indent: 150px">
+                        <li class="footer_title_menu">GET IN TOUCH</li>
+                        <!--contact Section-->
+                        <li class="footer-section contact">
+                            <form action="#" method="post" style="margin-left: 150px">
+                                <input type="email" name="email" class="text-input contact-input"
+                                    placeholder="Enter your email">
+                                <textarea name="message" class="text-input contact-input"
+                                    placeholder="Enter your Message"></textarea>
+                                <button type="submit" class="btn btn-big cursor_pointer"> <i
+                                        class="fas fa-envelope"></i></button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!--Bottom block of footer-->
+        <div class="footer-bottom">
+            &copy; Group47INC | Designed by Group 47
+        </div>
+    </footer>
+    <!--End of footer-->
+</div>
+
+<script src="../js/tacoBellSideMenu.js"></script>
+<script src="../js/localCart.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/Category.js"></script>
+</body>
+
+</html>
